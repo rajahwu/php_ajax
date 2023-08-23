@@ -17,7 +17,7 @@
         <ul>
             <p>php-response</p>
             <li><a href="./php-response/html/index.html">html</a></li>
-            <li><a href="./php-response/json/index.html">html</a></li>
+            <li><a href="./php-response/json/index.html">json</a></li>
 
         </ul>
     </ul>
