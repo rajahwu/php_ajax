@@ -35,7 +35,7 @@
     </div>
 
     <div id="load-more-container">
-      <button id="load-more">Load more</button>
+      <button id="load-more" data-page="0">Load more</button>
     </div>
 
     <script>
@@ -70,9 +70,14 @@
 
         var len = items.length
         for(i=0; i < len; i++) {
-          div.appendChild(items[0])
+          div.appendChild(items[0]);
         }
 
+      }
+
+      function setCurrentPage(page) {
+        console.log('Incrementing page to: ' + page);
+        load_more.setAttribute('data-page', page);
       }
 
       function loadMore() {
@@ -80,8 +85,11 @@
         showSpinner();
         hideLoadMore();
 
+        var page = parseInt(load_more.getAttribute('data-page'));
+        var next_page = page + 1;
+
         var xhr = new XMLHttpRequest();
-        xhr.open('GET', 'blog_posts.php?page=1', true);
+        xhr.open('GET', 'blog_posts.php?page=' + next_page, true);
         xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
         xhr.onreadystatechange = function () {
           if(xhr.readyState == 4 && xhr.status == 200) {
@@ -89,6 +97,7 @@
             console.log('Result: ' + result);
 
             hideSpinner();
+            setCurrentPage(next_page);
             // append results to end of blog posts
             appendToDiv(container, result);
             showLoadMore();
