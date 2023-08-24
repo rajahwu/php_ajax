@@ -1,10 +1,16 @@
 <?php
   // You can simulate a slow server with sleep
-  sleep(2);
+  // sleep(2);
 
   session_start();
 
   if(!isset($_SESSION['favorites'])) { $_SESSION['favorites'] = []; }
+
+  function array_remove($element, $array) {
+    $index = array_search($element, $array);
+    array_splice($array, $index, 1);
+    return $array;
+  }
 
   function is_ajax_request() {
     return isset($_SERVER['HTTP_X_REQUESTED_WITH']) &&
@@ -20,8 +26,8 @@
     $id = $matches[1];
 
     // store in $_SESSION['favorites']
-    if(!in_array($id, $_SESSION['favorites'])) {
-      $_SESSION['favorites'][] = $id;
+    if(in_array($id, $_SESSION['favorites'])) {
+      $_SESSION['favorites'] = array_remove($id, $_SESSION['favorites']);
     }
 
     echo 'true';
