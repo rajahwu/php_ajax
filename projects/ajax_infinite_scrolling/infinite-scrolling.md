@@ -11,3 +11,4 @@
 2. Append HTML Results
 3. Use a Data attribute
 4. Trigger Ajax on Scroll
+5. Prevent Multiple Requests

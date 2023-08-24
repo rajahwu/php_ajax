@@ -42,6 +42,7 @@
 
       var container = document.getElementById('blog-posts');
       var load_more = document.getElementById('load-more');
+      var request_in_progress = false;
 
       function showSpinner() {
         var spinner = document.getElementById("spinner");
@@ -83,7 +84,7 @@
       function scrollReaction() {
         var content_height = container.offsetHeight;
         var current_y = window.innerHeight + window.pageYOffset;
-        console.log(current_y + '/' + content_height);
+        // console.log(current_y + '/' + content_height);
         if(current_y >= content_height) {
           loadMore();
         }
@@ -91,6 +92,8 @@
 
       function loadMore() {
 
+        if(request_in_progress) { return };
+        request_in_progress = true;
         showSpinner();
         hideLoadMore();
 
@@ -111,6 +114,7 @@
             appendToDiv(container, result);
             showLoadMore();
 
+            request_in_progress = false;
           }
         };
         xhr.send();
