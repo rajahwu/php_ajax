@@ -1,6 +1,5 @@
 <?php
   session_start();
-
   if(!isset($_SESSION['favorites'])) { $_SESSION['favorites'] = []; }
 
 ?>
@@ -32,7 +31,7 @@
     </style>
   </head>
   <body>
-    <div id="blog-posts">
+      <div id="blog-posts">
       <div id="blog-post-101" class="blog-post">
         <h3>Blog Post 101</h3>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed scelerisque nunc malesuada mauris fermentum commodo. Integer non pellentesque augue, vitae pellentesque tortor. Ut gravida ullamcorper dolor, ac fringilla mauris interdum id. Nulla porta egestas nisi, et eleifend nisl tincidunt suscipit. Suspendisse massa ex, fringilla quis orci a, rhoncus porta nulla. Aliquam diam velit, bibendum sit amet suscipit eget, mollis in purus. Sed mattis ultricies scelerisque. Integer ligula magna, feugiat non purus eget, pharetra volutpat orci. Duis gravida neque erat, nec venenatis dui dictum vel. Maecenas molestie tortor nec justo porttitor, in sagittis libero consequat. Maecenas finibus porttitor nisl vitae tincidunt.</p>
