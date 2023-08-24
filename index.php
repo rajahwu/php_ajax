@@ -14,12 +14,12 @@
         <li><a href="./ajax-json/">ajax-json</a></li>
         <li><a href="./ajax-text/">ajax-client</a></li>
         <li><a href="./php-dectect-request/">php-detect-request</a></li>
-        <ul>
-            <p>php-response</p>
-            <li><a href="./php-response/html/index.html">html</a></li>
-            <li><a href="./php-response/json/index.html">json</a></li>
-
-        </ul>
+            <ul>
+                <p>php-response</p>
+                <li><a href="./php-response/html/index.html">html</a></li>
+                <li><a href="./php-response/json/index.html">json</a></li>
+            </ul>
+        <li><a href="./ajax_categoryselect/index.html">ajax_categoryselect</a></li>
     </ul>
 </body>
 </html>
