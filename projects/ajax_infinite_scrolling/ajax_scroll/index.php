@@ -15,22 +15,19 @@
       #spinner {
         display: none;
       }
+
+      nav {
+        margin-bottom: 15px;
+        font-size: small;
+      }
     </style>
   </head>
   <body>
+    <nav>
+      <a class="back-link" href=".."> &lt; &lt; Back</a>
+    </nav>
     <div id="blog-posts">
-      <div id="blog-post-101" class="blog-post">
-        <h3>Blog Post 101</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed scelerisque nunc malesuada mauris fermentum commodo. Integer non pellentesque augue, vitae pellentesque tortor. Ut gravida ullamcorper dolor, ac fringilla mauris interdum id. Nulla porta egestas nisi, et eleifend nisl tincidunt suscipit. Suspendisse massa ex, fringilla quis orci a, rhoncus porta nulla. Aliquam diam velit, bibendum sit amet suscipit eget, mollis in purus. Sed mattis ultricies scelerisque. Integer ligula magna, feugiat non purus eget, pharetra volutpat orci. Duis gravida neque erat, nec venenatis dui dictum vel. Maecenas molestie tortor nec justo porttitor, in sagittis libero consequat. Maecenas finibus porttitor nisl vitae tincidunt.</p>
-      </div>
-      <div id="blog-post-102" class="blog-post">
-        <h3>Blog Post 102</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed scelerisque nunc malesuada mauris fermentum commodo. Integer non pellentesque augue, vitae pellentesque tortor. Ut gravida ullamcorper dolor, ac fringilla mauris interdum id. Nulla porta egestas nisi, et eleifend nisl tincidunt suscipit. Suspendisse massa ex, fringilla quis orci a, rhoncus porta nulla. Aliquam diam velit, bibendum sit amet suscipit eget, mollis in purus. Sed mattis ultricies scelerisque. Integer ligula magna, feugiat non purus eget, pharetra volutpat orci. Duis gravida neque erat, nec venenatis dui dictum vel. Maecenas molestie tortor nec justo porttitor, in sagittis libero consequat. Maecenas finibus porttitor nisl vitae tincidunt.</p>
-      </div>
-      <div id="blog-post-103" class="blog-post">
-        <h3>Blog Post 103</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed scelerisque nunc malesuada mauris fermentum commodo. Integer non pellentesque augue, vitae pellentesque tortor. Ut gravida ullamcorper dolor, ac fringilla mauris interdum id. Nulla porta egestas nisi, et eleifend nisl tincidunt suscipit. Suspendisse massa ex, fringilla quis orci a, rhoncus porta nulla. Aliquam diam velit, bibendum sit amet suscipit eget, mollis in purus. Sed mattis ultricies scelerisque. Integer ligula magna, feugiat non purus eget, pharetra volutpat orci. Duis gravida neque erat, nec venenatis dui dictum vel. Maecenas molestie tortor nec justo porttitor, in sagittis libero consequat. Maecenas finibus porttitor nisl vitae tincidunt.</p>
-      </div>
+    
     </div>
 
     <div id="spinner">
@@ -64,6 +61,20 @@
         load_more.style.display = 'none';
       }
 
+      function appendToDiv(div, new_html) {
+        var temp = document.createElement('div');
+        temp.innerHTML = new_html;
+
+        var class_name = temp.firstElementChild.className;
+        var items = temp.getElementsByClassName(class_name);
+
+        var len = items.length
+        for(i=0; i < len; i++) {
+          div.appendChild(items[0])
+        }
+
+      }
+
       function loadMore() {
 
         showSpinner();
@@ -79,6 +90,7 @@
 
             hideSpinner();
             // append results to end of blog posts
+            appendToDiv(container, result);
             showLoadMore();
 
           }
@@ -89,7 +101,7 @@
       load_more.addEventListener("click", loadMore);
 
       // Load even the first page with Ajax
-      //loadMore();
+      loadMore();
     </script>
 
   </body>
