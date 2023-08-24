@@ -24,6 +24,7 @@
             <ul>
                 <li><a href="./projects/ajax_button/">Ajax Button</a></li>
                 <li><a href="./projects/ajax_form_submission/">Ajax Form Submission</a></li>
+                <li><a href="./projects/ajax_infinite_scrolling/">Ajax Infinite Scrolling</a></li>
             </ul>
     </ul>
 </body>
