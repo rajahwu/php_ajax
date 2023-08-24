@@ -12,8 +12,8 @@
         <li><a href="./ajax_client/">ajax-client</a></li>
         <li><a href="./ajax_jquery/">ajax-jquery</a></li>
         <li><a href="./ajax_json/">ajax-json</a></li>
-        <li><a href="./ajax_text/">ajax-client</a></li>
-        <li><a href="./php_dectect_request/">php-detect-request</a></li>
+        <li><a href="./ajax_text/">ajax-text</a></li>
+        <li><a href="./php_detect_request/">php-detect-request</a></li>
         <li>php-response</li> 
             <ul>
                 <li><a href="./php_response/html/index.html">html</a></li>
